@@ -1,0 +1,5 @@
+{
+    "name": "Hass.io restic add-on",
+    "url": "https://github.com/martenjacobs/hassio-restic",
+    "maintainer": "Marten Jacobs <mail@vanmarten.nl>"
+}

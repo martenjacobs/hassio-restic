@@ -1,0 +1,29 @@
+{
+    "name": "Restic",
+    "version": "0.1",
+    "slug": "restic",
+    "description": "Create back-ups using restic",
+    "arch": [
+        "armhf",
+        "armv7",
+        "aarch64",
+        "i386",
+        "amd64"
+    ],
+    "startup": "once",
+    "boot": "manual",
+    "map": [
+        "config",
+        "ssl",
+        "addons",
+        "backup",
+        "share",
+        "media"
+    ],
+    "options": {
+        "remote_url": ""
+    },
+    "schema": {
+        "remote_url": "str"
+    }
+}
