@@ -15,8 +15,10 @@ $(jq -r \
   "$CONFIG_PATH")
 
 # run the backup
-restic --verbose backup /backup-source/ || true
-
+(
+  cd /hassos-data/supervisor
+  restic --verbose backup .
+)|| true
 # Temporary ssh related stuff
 echo "root:password" | chpasswd
 if [ ! -f "/etc/ssh/ssh_host_rsa_key" ]; then
