@@ -23,6 +23,7 @@
     "options": {
         "env_vars": {}
     },
+    "schema":false,
     "full_access":true,
     "ports":{
         "22/tcp": 4848
