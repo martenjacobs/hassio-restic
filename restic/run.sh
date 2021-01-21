@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bashio
-
+echo "HassOS restic add-on starting"
+date
 set -e
 
 mkdir -p /data/restic-cache
@@ -27,3 +28,5 @@ jq -r \
     --exclude-file=/exclude_file \
     backup .
 )
+
+echo "Done"
