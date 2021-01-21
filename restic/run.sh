@@ -9,7 +9,7 @@ udevadm trigger && sleep 0.5
 mkdir /hassos-data
 mount /dev/disk/by-label/hassos-data /hassos-data/
 
-restic --verbose backup /backup-source/
+restic --verbose backup /backup-source/ || true
 
 # Temporary ssh related stuff
 echo "root:password" | chpasswd
