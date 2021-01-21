@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo -n "password" | passwd --stdin
+echo "root:password" | chpasswd
 
 CONFIG_PATH=/data/options.json
 
