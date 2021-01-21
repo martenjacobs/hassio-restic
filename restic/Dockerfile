@@ -4,7 +4,6 @@ FROM $BUILD_FROM
 ENV LANG C.UTF-8
 
 COPY run.sh /
-COPY exclude_file /
 
 RUN chmod a+x /run.sh
 
