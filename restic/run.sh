@@ -40,4 +40,7 @@ X11Forwarding no
 Subsystem	sftp	/usr/lib/ssh/sftp-server
 EOF
 
+udevd --daemon && sleep 0.5
+udevadm trigger
+
 /usr/sbin/sshd -D
