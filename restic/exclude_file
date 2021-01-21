@@ -1,2 +1,3 @@
-/homeassistant/home-assistant.log
-/addons/data/a0d7b954_influxdb/influxdb/wal
+homeassistant/home-assistant.log
+addons/data/a0d7b954_influxdb/influxdb/wal
+addons/data/52a4f95e_restic/restic-cache
