@@ -6,7 +6,7 @@ ENV LANG C.UTF-8
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-RUN apk add --no-cache restic openssh
+RUN apk add --no-cache restic openssh grep
 
 WORKDIR /data
 
