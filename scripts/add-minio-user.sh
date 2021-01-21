@@ -45,3 +45,5 @@ mc admin policy set $MINIO $USER user=$USER
 echo "Use these environment variables:"
 echo "AWS_ACCESS_KEY_ID: '$USER'"
 echo "AWS_SECRET_ACCESS_KEY: '$PASSWD'"
+echo "RESTIC_REPOSITORY: 's3:<minio server address>/restic-backups/$CLIENT'"
+
