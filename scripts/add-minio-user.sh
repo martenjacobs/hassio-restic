@@ -17,9 +17,11 @@ if [[ "$CONT" != "y" ]]; then
   exit 1
 fi
 
+# create and enable the user
 mc admin user add $MINIO $USER "$PASSWD"
 mc admin user enable $MINIO $USER
 
+# create a policy
 cat <<EOF | mc admin policy add $MINIO $USER /dev/stdin 
 {
   "Version": "2012-10-17",
@@ -40,8 +42,10 @@ cat <<EOF | mc admin policy add $MINIO $USER /dev/stdin
 }
 EOF
 
+# attach the policy to the user
 mc admin policy set $MINIO $USER user=$USER
 
+# echo the settings to the user
 echo "Use these environment variables:"
 echo "AWS_ACCESS_KEY_ID: '$USER'"
 echo "AWS_SECRET_ACCESS_KEY: '$PASSWD'"
