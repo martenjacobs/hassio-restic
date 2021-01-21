@@ -6,12 +6,12 @@ read CLIENT
 USER="$CLIENT-restic"
 
 echo -n "Client password: "
-read PASSWORD
+read PASSWD
 
 echo -n "MinIO alias: "
 read MINIO
 
-echo -n "Will create a user called \"$USER\" with password \"$PASSWORD\" on minio instance \"$MINIO\". Continue? (y/n) "
+echo -n "Will create a user called \"$USER\" with password \"$PASSWD\" on minio instance \"$MINIO\". Continue? (y/n) "
 read CONT
 if [[ "$CONT" != "y" ]]; then
   exit 1
