@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bashio
+
 set -e
 
 CONFIG_PATH=/data/options.json
