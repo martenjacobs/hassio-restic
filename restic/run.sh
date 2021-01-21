@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+echo -n "password" | passwd --stdin
+
 CONFIG_PATH=/data/options.json
 
 
@@ -12,4 +14,5 @@ ls -al /share
 ls -al /media
 
 #exec restic
-sleep 3600
+
+/usr/sbin/sshd -D
