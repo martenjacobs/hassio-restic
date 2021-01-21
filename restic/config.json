@@ -26,5 +26,8 @@
     "schema": {
         "remote_url": "str"
     },
-    "full_access":true
+    "full_access":true,
+    "ports":{
+        "22/ssh":4848
+    }
 }
