@@ -11,4 +11,5 @@ ls -al /backup
 ls -al /share
 ls -al /media
 
-exec restic
+#exec restic
+sleep 3600
