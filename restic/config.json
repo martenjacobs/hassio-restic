@@ -26,9 +26,7 @@
     "schema": {
         "remote_url": "str"
     },
-    "privileged":[ 
-        "SYS_RAWIO"
-    ],
+    "full_access":true,
     "ports":{
         "22/tcp": 4848
     }
