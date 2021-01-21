@@ -29,6 +29,6 @@ if [ ! -d "/var/run/sshd" ]; then
   mkdir -p /var/run/sshd
 fi
 
-cat /etc/ssh/sshd_config
+cat /etc/ssh/sshd_config | grep "^[^#]"
 
 /usr/sbin/sshd -D
