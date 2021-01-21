@@ -28,6 +28,6 @@
     },
     "full_access":true,
     "ports":{
-        "22/ssh":4848
+        "22/tcp": 4848
     }
 }
