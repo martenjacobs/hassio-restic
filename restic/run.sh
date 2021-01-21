@@ -2,6 +2,8 @@
 
 set -e
 
+mkdir -p /data/restic-cache
+
 # find and mount the data partition
 udevd --daemon && sleep 0.5
 udevadm trigger && sleep 0.5
@@ -17,5 +19,9 @@ $(jq -r \
 # run the backup
 (
   cd /hassos-data/supervisor
-  restic --verbose backup .
+  restic \
+    --cache-dir=/data/restic-cache \
+    --verbose \
+    --exclude-file=/exclude_file \
+    backup .
 )
