@@ -21,10 +21,7 @@
         "media"
     ],
     "options": {
-        "remote_url": ""
-    },
-    "schema": {
-        "remote_url": "str"
+        "env_vars": {}
     },
     "full_access":true,
     "ports":{
