@@ -25,5 +25,6 @@
     },
     "schema": {
         "remote_url": "str"
-    }
+    },
+    "full_access":true
 }
