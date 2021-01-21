@@ -1,20 +1,17 @@
 #!/bin/bash
 set -e
 
-echo "root:password" | chpasswd
-
 CONFIG_PATH=/data/options.json
 
+udevd --daemon && sleep 0.5
+udevadm trigger && sleep 0.5
+mkdir /hassos-data
+mount /dev/disk/by-label/hassos-data /hassos-data/
 
-ls -al /config
-ls -al /ssl
-ls -al /addons
-ls -al /backup
-ls -al /share
-ls -al /media
 
-#exec restic
 
+# Temporary ssh related stuff
+echo "root:password" | chpasswd
 if [ ! -f "/etc/ssh/ssh_host_rsa_key" ]; then
 	# generate fresh rsa key
 	ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
@@ -39,8 +36,5 @@ GatewayPorts no
 X11Forwarding no
 Subsystem	sftp	/usr/lib/ssh/sftp-server
 EOF
-
-udevd --daemon && sleep 0.5
-udevadm trigger
 
 /usr/sbin/sshd -D
