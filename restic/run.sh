@@ -29,6 +29,15 @@ if [ ! -d "/var/run/sshd" ]; then
   mkdir -p /var/run/sshd
 fi
 
-cat /etc/ssh/sshd_config | grep "^[^#]"
+#cat /etc/ssh/sshd_config | grep "^[^#]"
+
+cat <<EOF > /etc/ssh/sshd_config
+PermitRootLogin yes
+AuthorizedKeysFile	.ssh/authorized_keys
+AllowTcpForwarding no
+GatewayPorts no
+X11Forwarding no
+Subsystem	sftp	/usr/lib/ssh/sftp-server
+EOF
 
 /usr/sbin/sshd -D
